@@ -1,3 +1,9 @@
+> [!NOTE]
+> This is a community-maintained fork of a MIT-licensed student project in the *Effective Programming with Effects* course in winter semester 2025/2026.
+> Be warned that this is not an officially endorsed project, the code in this repository may be not idiomatic Effekt.
+> 
+> The original repository is https://github.com/JoshuaSchlucke/AnsatzLite
+
 # AnsatzLite
 
 AnsatzLite is a small internal DSL and runtime for the Quantum alternating operator ansatz, written in Effekt.
