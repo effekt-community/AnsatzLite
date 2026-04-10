@@ -197,9 +197,11 @@ def runAndPrint(cfg: Config) { program: () => Double / {prepare, cost, costEdge,
 
 def reportErrors[R] { prog: => R / Exception[WrongFormat] }: Option[R] =
   try { Some(prog()) }
-  with raise[WrongFormat] { (_, msg) =>
-    println("error: " ++ msg)
-    None()
+  with Exception[WrongFormat] {
+    def raise(_, msg) = {
+      println("error: " ++ msg)
+      None()
+    }
   }
 
 def runGraphProblem(cfg: Config) { execute: (Ansatz, Graph) => Double / {prepare, cost, costEdge, costPredicate, mixer, expect} }: Unit / Exception[WrongFormat] = {
